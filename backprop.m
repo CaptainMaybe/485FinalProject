@@ -14,11 +14,11 @@ function [w1, w2, b1, b2, a] = backprop(input_num, P, T, lr)
     
     for j = 1:epoch_num
       for i = 1:input_num %i is column num (or respective input vector)
-        % inhibP = latInhibSquare(P(i,:)');
-        [n1, n2, a, hidA] = propogateForward(P(i,:)', w1, w2, b1, b2);
+        inhibP = latInhibSquare(P(i,:)');
+        [n1, n2, a, hidA] = propogateForward(inhibP,w1, w2, b1, b2);
         s2 = computeOutputSensitivities(a, T(i,:)', n2);
         s1 = backpropogateSensitivities(w2, s2, n1);
-        [w1, b1] = updateWeightAndBiases(w1, b1, s1, P(i,:)', lr);
+        [w1, b1] = updateWeightAndBiases(w1, b1, s1,inhibP, lr);
         [w2, b2] = updateWeightAndBiases(w2, b2, s2, hidA, lr);
       end
     end

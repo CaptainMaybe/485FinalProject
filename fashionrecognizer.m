@@ -22,8 +22,8 @@ for ln = 1:lr_num
         total = 0;
 
         for i = 1:test_num
-            %inhibP = latInhibSquare(test_P(i,:)');
-            [n1, n2, a, a1] = propogateForward(test_P(i,:)', W1, W2, b1, b2);
+            inhibP = latInhibSquare(test_P(i,:)');
+            [n1, n2, a, a1] = propogateForward(inhibP, W1, W2, b1, b2);
             e = sum(squaredError(a, test_T(i,:)'));
             total = total + e;
         end
