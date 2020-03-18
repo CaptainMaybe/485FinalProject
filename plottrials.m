@@ -16,5 +16,5 @@ lgd.NumColumns = 10;
 
 % xticks(ticks);
 ylabel('Mean Squared Error');
-xlabel('Learning Rate');
-title('Backprop with Lat. Inhibition Preprocessing: Error vs # Hidden Neurons');
+xlabel('HIdden Neurons');
+title('Tansig BP with Lat. Inhibition Preprocessing: Error vs # Hidden Neurons');

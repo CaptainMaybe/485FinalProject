@@ -4,7 +4,7 @@ Things we've tried:
 -Standard backprop
 -Lateral inhibition preprocessing
 
-Things we'r trying:
+Things we're trying:
 -tansig instead of logsig
 
 Things we're putting on hold:
