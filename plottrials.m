@@ -17,4 +17,4 @@ lgd.NumColumns = 10;
 % xticks(ticks);
 ylabel('Mean Squared Error');
 xlabel('HIdden Neurons');
-title('Tansig BP with Lat. Inhibition Preprocessing: Error vs # Hidden Neurons');
+title('Tansig BP with Competetion Post Processing: Error vs # Hidden Neurons');
