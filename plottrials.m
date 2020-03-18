@@ -2,7 +2,7 @@ hold off;
 clf;
 hold on;
 e_plot = e2';
-ticks = lr;
+ticks = hnn;
 for i = 1:trial_num
     scatter(ticks, e_plot(i,:));
 end
@@ -17,4 +17,4 @@ lgd.NumColumns = 10;
 % xticks(ticks);
 ylabel('Mean Squared Error');
 xlabel('Learning Rate');
-title('Backprop with Lat. Inhibition Preprocessing: Error vs Learning Rate');
+title('Backprop with Lat. Inhibition Preprocessing: Error vs # Hidden Neurons');
