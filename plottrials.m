@@ -2,20 +2,19 @@ hold off;
 clf;
 hold on;
 e_plot = e2';
-ticks = hidden;
+ticks = lr;
 for i = 1:trial_num
-    scatter(ticks, e_plot(trial_num,:));
+    scatter(ticks, e_plot(i,:));
 end
 med = median(e_plot);
 plot(ticks,med);
 
-tr = 1:trial_num;
-tr(trial_num + 1) = 'median';
-lgd = legend(tr);
+lgd = legend('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'median');
 lgd.Title.String = 'Trial';
-legend('Location','northwest')
+legend('Location','northeast')
+lgd.NumColumns = 10;
 
-xtick(ticks);
+% xticks(ticks);
 ylabel('Mean Squared Error');
-xlabel('Nodes in Hidden Layer');
-title('BackProp with Lateral Inhibition Preprocessing: Performance vs # Hidden Neurons');
+xlabel('Learning Rate');
+title('Backprop with Lat. Inhibition Preprocessing: Error vs Learning Rate');

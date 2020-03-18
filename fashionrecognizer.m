@@ -10,14 +10,14 @@ test_P = train_data(train_num + 1:end,:) / 255.0;
 test_T = train_label(train_num + 1:end,1);
 test_T = convertT(test_T);
 
-hidden = [10, 15, 20, 25, 30, 35, 40];
-hidden_num = size(hidden);
-hidden_num = hidden_num(2);
+lr = [0.02, 0.04, 0.06, 0.08, 0.1];
+lr_num = size(lr);
+lr_num = lr_num(2);
 trial_num = 10;
 
-for hn = 1:hidden_num
+for ln = 1:lr_num
     for tn = 1:trial_num
-        [W1, W2, b1, b2, out] = backprop(train_num,P, T, hidden(hn));
+        [W1, W2, b1, b2, out] = backprop(train_num,P, T, lr(ln));
         total = 0;
 
         for i = 1:test_num
@@ -26,6 +26,6 @@ for hn = 1:hidden_num
             e = sum(squaredError(a, test_T(i,:)'));
             total = total + e;
         end
-        e2(hn,tn) = total/test_num;
+        e2(ln,tn) = total/test_num;
     end
 end

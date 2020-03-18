@@ -1,9 +1,8 @@
-function [w1, w2, b1, b2, a] = backprop(input_num, P, T, hn)
+function [w1, w2, b1, b2, a] = backprop(input_num, P, T, lr)
     
     inputs = 784; % 784 inputs
-    hidOutputs = hn; % hn num neural networks
+    hidOutputs = 25; % hn num neural networks
     outputs = 10; % 10 classifications
-    lr = 0.08;
     
     %randomize the starting weights to values close to zero
     w1 = 2.*rand(inputs,hidOutputs).' - 1;
