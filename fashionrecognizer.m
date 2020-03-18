@@ -10,8 +10,8 @@ test_P = train_data(train_num + 1:end,:) / 255.0;
 test_T = train_label(train_num + 1:end,1);
 test_T = convertT(test_T);
 
-lr = [0.02 0.04 0.06 0.08 0.1];
-%lr = [0.1, 0.12, 0.14, 0.16, 0.18];
+%lr = [0.02 0.04 0.06 0.08 0.1];
+lr = [0.004, 0.008, 0.012, 0.014, 0.016, 0.02];
 lr_num = size(lr);
 lr_num = lr_num(2);
 hnn = 25;
