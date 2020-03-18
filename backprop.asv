@@ -1,7 +1,7 @@
-function [w1, w2, b1, b2, a] = backprop(input_num, P, T, hn)
+function [w1, w2, b1, b2, a] = backprop(input_num, P, T)
     
     inputs = 784; % 784 inputs
-    hidOutputs = hn; % hn num neural networks
+    hidOutputs = 20; % 20 nn in hidden layer
     outputs = 10; % 10 classifications
     lr = 0.08;
     
@@ -11,7 +11,7 @@ function [w1, w2, b1, b2, a] = backprop(input_num, P, T, hn)
     b1 = 2.*rand(hidOutputs,1) - 1;
     b2 = 2.*rand(outputs,1) - 1;
     
-    epoch_num = 4;
+    epoch_num = 10;
     
     for j = 1:epoch_num
       for i = 1:input_num %i is column num (or respective input vector)
