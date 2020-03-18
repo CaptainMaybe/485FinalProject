@@ -29,7 +29,8 @@ for hn = 1:hn_num
         for i = 1:test_num
             %inhibP = latInhibSquare(test_P(i,:)');
             [n1, n2, a, a1] = propogateForward(test_P(i,:)', W1, W2, b1, b2);
-            e = sum(squaredError(a, test_T(i,:)'));
+            ct = compete(test_T(i,:));
+            e = sum(squaredError(a, ct'));
             total = total + e;
         end
         e2(hn,tn) = total/test_num;
