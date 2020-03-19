@@ -2,7 +2,7 @@ hold off;
 clf;
 hold on;
 e_plot = e2';
-ticks = lr;
+ticks = [.01 .02 .03 .04 .05];
 for i = 1:trial_num
     scatter(ticks, e_plot(i,:));
 end
@@ -16,6 +16,6 @@ lgd.NumColumns = 10;
 
 % xticks(ticks);
 ylabel('Mean Squared Error');
-xlabel('Learning Rate');
+xlabel('Percent Change in Learning Rate');
 %title('hi');
-title('Tansig: Error vs Learning Rate');
+title('Logsig, Variable Learning Rate: Learning Rate Change vs Error');
