@@ -12,7 +12,7 @@ function [w1, w2, b1, b2, a] = backprop(input_num, P, T, lt, hnn) %, percent, ul
     b2 = 2.*rand(outputs,1) - 1;
     
     epoch_num = 4;
-    old_e = -1;
+    %old_e = -1;
     %wo1 = w1;
     %wo2 = w2;
     %bo1 = b1;

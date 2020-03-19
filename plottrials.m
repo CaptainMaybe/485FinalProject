@@ -16,6 +16,6 @@ lgd.NumColumns = 10;
 
 % xticks(ticks);
 ylabel('Mean Squared Error');
-xlabel('Percent Change in Learning Rate');
+xlabel('Learning Rate');
 %title('hi');
-title('Logsig, Variable Learning Rate: Learning Rate Change vs Error');
+title('Logsig, Normalized: Learning Rate vs Error');
