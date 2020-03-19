@@ -11,10 +11,11 @@ plot(ticks,med);
 xticks(ticks);
 lgd = legend('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'median');
 lgd.Title.String = 'Trial';
-legend('Location','northeast')
+legend('Location','northeast');
 lgd.NumColumns = 10;
 
 % xticks(ticks);
 ylabel('Mean Squared Error');
 xlabel('Learning Rate');
-title('Tansig BP with Competition Post Processing: Error vs Learning Rate');
+%title('hi');
+title('Tansig: Error vs Learning Rate');

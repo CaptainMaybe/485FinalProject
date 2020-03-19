@@ -10,8 +10,8 @@ test_P = train_data(train_num + 1:end,:) / 255.0;
 test_T = train_label(train_num + 1:end,1);
 test_T = convertT(test_T);
 
-%lr = [0.02 0.04 0.06 0.08 0.1];
-lr = [0.004, 0.008, 0.012, 0.014, 0.016, 0.02];
+lr = [0.02 0.04 0.06 0.08 0.1];
+%lr = [0.004, 0.008, 0.012, 0.014, 0.016, 0.02];
 lr_num = size(lr);
 lr_num = lr_num(2);
 hnn = 25;
@@ -29,8 +29,8 @@ for ln = 1:lr_num
         for i = 1:test_num
             %inhibP = latInhibSquare(test_P(i,:)');
             [n1, n2, a, a1] = propogateForward(test_P(i,:)', W1, W2, b1, b2);
-            ct = compete(test_T(i,:));
-            e = sum(squaredError(a, ct'));
+            %ct = compete(test_T(i,:)');
+            e = sum(squaredError(a, test_T(i,:)'));
             total = total + e;
         end
         e2(ln,tn) = total/test_num;
