@@ -1,4 +1,4 @@
-function [w1, w2, b1, b2, a] = backprop(input_num, P, T, lt, hnn, percent, ulr, dlr)
+function [w1, w2, b1, b2, a] = backprop(input_num, P, T, lt, hnn) %, percent, ulr, dlr)
     
     lr = lt;
     inputs = 784; % 784 inputs
@@ -20,10 +20,10 @@ function [w1, w2, b1, b2, a] = backprop(input_num, P, T, lt, hnn, percent, ulr, 
     for j = 1:epoch_num
       for i = 1:input_num %i is column num (or respective input vector)
         %inhibP = latInhibSquare(P(i,:)');
-        nP = normalizeP((P(i,:)');
+        nP = normalizeP(P(i,:)');
         [n1, n2, a, hidA] = propogateForward(nP,w1, w2, b1, b2);
         e = sum(squaredError(a, T(i,:)'));
-        variablelearningrate;
+        %variablelearningrate;
         s2 = computeOutputSensitivities(a, T(i,:)', n2);
         s1 = backpropogateSensitivities(w2, s2, n1, hidA);
         [w1, b1, ~, ~] = updateWeightAndBiases(w1, b1, s1,P(i,:)', lr);
